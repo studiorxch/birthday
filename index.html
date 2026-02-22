@@ -42,6 +42,26 @@
           <button type="submit" id="generateBtn">Generate</button>
         </form>
         <p class="hint" id="statusText">Awaiting a date.</p>
+        <div class="share-row">
+          <button type="button" id="shareBtn" class="ghost">
+            Share My Timeline
+          </button>
+          <span id="shareStatus" class="hint"></span>
+        </div>
+      </section>
+
+      <section class="today-panel">
+        <h2>Today in Culture</h2>
+        <div class="today-grid">
+          <div>
+            <h3>Famous Today</h3>
+            <div id="todayBirths" class="list"></div>
+          </div>
+          <div>
+            <h3>Historical Events</h3>
+            <div id="todayEvents" class="list"></div>
+          </div>
+        </div>
       </section>
 
       <section class="identity">
@@ -63,16 +83,23 @@
         <div class="panel">
           <div class="panel-header">
             <h3>Famous Birthdays</h3>
-            <span class="subhead">Top 10 entries</span>
+            <span class="subhead">Grouped by Category</span>
           </div>
           <div id="birthsList" class="list"></div>
         </div>
         <div class="panel">
           <div class="panel-header">
-            <h3>Historical Events</h3>
-            <span class="subhead">Top 10 entries</span>
+            <h3>Your Life Timeline</h3>
+            <span class="subhead" id="timelineSubhead">Enter a date to begin.</span>
           </div>
+          <p class="timeline-intro" id="timelineIntro">
+            You were born in —. Here’s what happened on — during your lifetime.
+          </p>
           <div id="eventsList" class="list"></div>
+          <button type="button" id="toggleAncient" class="ghost">
+            View Ancient History
+          </button>
+          <div id="ancientList" class="list hidden"></div>
         </div>
       </section>
     </main>
