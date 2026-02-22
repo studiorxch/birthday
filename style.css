@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+main {
+  max-width: 600px;
+  width: 100%;
+}
+
+input,
+button {
+  padding: 10px;
+  margin-top: 10px;
+}

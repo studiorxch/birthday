@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Birthday Events</title>
+  </head>
+  <body>
+    <h1>What Happened On Your Birthday?</h1>
+    <input type="date" id="dateInput" />
+    <button onclick="fetchEvents()">See Events</button>
+    <div id="results"></div>
+
+    <script>
+      async function fetchEvents() {
+        const date = new Date(document.getElementById("dateInput").value);
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+
+        const res = await fetch(
+          `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/all/${month}/${day}`,
+        );
+        const data = await res.json();
+
+        const resultsDiv = document.getElementById("results");
+        resultsDiv.innerHTML = "<h2>Events</h2>";
+
+        data.events.slice(0, 10).forEach((event) => {
+          resultsDiv.innerHTML += `<p><strong>${event.year}</strong>: ${event.text}</p>`;
+        });
+      }
+    </script>
+  </body>
+</html>
