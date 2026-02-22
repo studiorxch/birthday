@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Birthday — Cultural Timeline</title>
+    <title>Birthday — Cultural Portal</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -20,14 +26,55 @@
     </script>
   </head>
   <body>
-    <main>
-      <h1>Birthday</h1>
-      <p>Discover who you share your birthday with.</p>
+    <main class="page">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Birthday Cultural Portal</p>
+          <h1>Trace your day through history.</h1>
+          <p class="lead">
+            Enter a date to reveal your age, zodiac identities, famous births, and
+            historical events.
+          </p>
+        </div>
+        <form class="input-row" id="birthdayForm">
+          <label class="sr-only" for="dateInput">Birthday</label>
+          <input type="date" id="dateInput" required />
+          <button type="submit" id="generateBtn">Generate</button>
+        </form>
+        <p class="hint" id="statusText">Awaiting a date.</p>
+      </section>
 
-      <input type="date" id="dateInput" />
-      <button id="generateBtn">Generate</button>
+      <section class="identity">
+        <div class="card">
+          <p class="card-label">Age</p>
+          <h2 id="ageValue">—</h2>
+        </div>
+        <div class="card">
+          <p class="card-label">Western Zodiac</p>
+          <h2 id="zodiacValue">—</h2>
+        </div>
+        <div class="card">
+          <p class="card-label">Chinese Zodiac</p>
+          <h2 id="chineseValue">—</h2>
+        </div>
+      </section>
 
-      <div id="results"></div>
+      <section class="grid">
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Famous Birthdays</h3>
+            <span class="subhead">Top 10 entries</span>
+          </div>
+          <div id="birthsList" class="list"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Historical Events</h3>
+            <span class="subhead">Top 10 entries</span>
+          </div>
+          <div id="eventsList" class="list"></div>
+        </div>
+      </section>
     </main>
 
     <script src="script.js"></script>
