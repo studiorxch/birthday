@@ -1,18 +1,24 @@
-document.getElementById("generateBtn").addEventListener("click", () => {
-  const date = document.getElementById("dateInput").value;
-  if (!date) return;
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("generateBtn");
 
-  const d = new Date(date);
-  const year = d.getFullYear();
-  const month = d.getMonth() + 1;
+  btn.addEventListener("click", function () {
+    const dateInput = document.getElementById("dateInput").value;
+    if (!dateInput) return;
 
-  document.getElementById("results").innerHTML =
-    `Fetching cultural data for ${date}...`;
+    const d = new Date(dateInput);
+    const year = d.getFullYear();
+    const month = d.getMonth() + 1;
 
-  if (typeof gtag === "function") {
-    gtag("event", "birthday_query", {
-      birth_year: year,
-      birth_month: month,
-    });
-  }
+    console.log("Birthday event firing:", year, month);
+
+    if (typeof gtag === "function") {
+      gtag("event", "birthday_query", {
+        birth_year: year,
+        birth_month: month,
+      });
+    }
+
+    document.getElementById("results").innerHTML =
+      `Fetching cultural data for ${dateInput}...`;
+  });
 });
