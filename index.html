@@ -32,8 +32,8 @@
           <p class="eyebrow">Birthday Cultural Portal</p>
           <h1>Trace your day through history.</h1>
           <p class="lead">
-            Enter a date to reveal your age, zodiac identities, famous births, and
-            historical events.
+            Enter a date to reveal your age, zodiac identities, famous births,
+            and historical events.
           </p>
         </div>
         <form class="input-row" id="birthdayForm">
@@ -51,17 +51,18 @@
       </section>
 
       <section class="today-panel">
-        <h2>Today in Culture</h2>
-        <div class="today-grid">
-          <div>
-            <h3>Famous Today</h3>
-            <div id="todayBirths" class="list"></div>
-          </div>
-          <div>
-            <h3>Historical Events</h3>
-            <div id="todayEvents" class="list"></div>
-          </div>
+        <h2>Today’s Famous Birthdays</h2>
+
+        <div class="today-tabs">
+          <button class="today-tab active" data-tab="Music">Music</button>
+          <button class="today-tab" data-tab="Film & TV">Film & TV</button>
+          <button class="today-tab" data-tab="Arts & Culture">Arts</button>
+          <button class="today-tab" data-tab="Business">Business</button>
+          <button class="today-tab" data-tab="Sports">Sports</button>
+          <button class="today-tab" data-tab="All">All</button>
         </div>
+
+        <div id="todayBirths" class="list"></div>
       </section>
 
       <section class="identity">
@@ -90,7 +91,9 @@
         <div class="panel">
           <div class="panel-header">
             <h3>Your Life Timeline</h3>
-            <span class="subhead" id="timelineSubhead">Enter a date to begin.</span>
+            <span class="subhead" id="timelineSubhead"
+              >Enter a date to begin.</span
+            >
           </div>
           <p class="timeline-intro" id="timelineIntro">
             You were born in —. Here’s what happened on — during your lifetime.
